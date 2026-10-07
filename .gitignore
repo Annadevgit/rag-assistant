@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+venv/
+.venv/
+
+# Index généré (reconstructible via `python -m src.build_index`)
+data/index/*.npy
+data/index/*.pkl
+data/index/chunks.json
+data/eval_results.json
+
+# Environnement
+.env
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

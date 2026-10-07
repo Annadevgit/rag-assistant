@@ -1,0 +1,12 @@
+numpy>=1.26.0
+scikit-learn>=1.5.0
+streamlit>=1.36.0
+pytest>=8.2.0
+
+# Optional — semantic embedding backend (requires an internet connection
+# when the model is loaded for the first time). Uncomment if you want to use it:
+# sentence-transformers>=3.0.0
+
+# Optional — generation using a real LLM (the "llm" mode in generation.py).
+# Uncomment and set ANTHROPIC_API_KEY if you want to use it:
+# anthropic>=0.34.0
