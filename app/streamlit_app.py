@@ -21,25 +21,17 @@ st.write(
     "— no information is ever made up."
 )
 
-INDEX_DIR = Path(__file__).resolve().parent.parent / "data" / "index"
-
-if not (INDEX_DIR / "embeddings.npy").exists():
-    st.error(
-        "Index not found. Run this first:\n\n"
-        "```\npython -m src.build_index\n```"
-    )
-    st.stop()
-
-
 @st.cache_resource
 def load_pipeline(generation_mode: str):
-    pipeline = RagPipeline(
-        index_dir=str(INDEX_DIR),
-        generation_mode=generation_mode,
-    )
+    if not (INDEX_DIR / "embeddings.npy").exists():
+        with st.spinner("Building the index for this deployment, please wait a few second..."):
+            import subprocess, sys
+            root = str(Path(__file__).resolve().parent.parent)
+            subprocess.run([sys.executable, "-m", "src.build_index"], cwd=root, check=True)
+
+    pipeline = RagPipeline(index_dir=str(INDEX_DIR), generation_mode=generation_mode)
     pipeline.load()
     return pipeline
-
 
 with st.sidebar:
     st.header("Settings")
