@@ -8,6 +8,9 @@ import streamlit as st
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from src.rag_pipeline import RagPipeline
 
+
+INDEX_DIR = Path(__file__).resolve().parent.parent / "data" / "index"
+
 st.set_page_config(
     page_title="RAG Document Assistant",
     page_icon="📚",
