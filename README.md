@@ -1,5 +1,7 @@
 RAG Document Assistant
 
+🔗 **Live demo**: https://rag-assistant-8cuy83fh92dggetac9pydf.streamlit.app/
+
 A question-answering system (RAG — Retrieval-Augmented Generation) that answers questions using only an indexed document database, with systematic source citation and rigorous evaluation of both retrieval and generation.
 
 Context and Problem Statement
